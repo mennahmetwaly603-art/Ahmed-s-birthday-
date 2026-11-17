@@ -52,9 +52,9 @@ button:hover{transform:translateY(-3px);filter:brightness(1.15)}
 #birthday h2{font-size:clamp(32px,7vw,48px);color:var(--cream)}
 #candle{font-size:90px;margin:25px;cursor:pointer;position:relative;z-index:3}
 #birthdayMessage{display:none;font-family:'Amiri';font-size:30px;color:var(--gold);margin:15px;position:relative;z-index:3}
-#heartBurst{position:absolute;inset:0;pointer-events:none;z-index:4;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-template-rows:repeat(5,minmax(0,1fr));gap:4px;width:min(430px,92vw);height:min(410px,88vw);margin:auto;place-content:center;overflow:visible;filter:drop-shadow(0 12px 24px #10040a99)}
-.burst-photo{width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;border:2px solid #f3e6d9;border-radius:8px;box-shadow:0 5px 14px #10040a88;opacity:0;animation:heartTileIn .75s cubic-bezier(.2,.75,.2,1) forwards}
-@keyframes heartTileIn{0%{transform:scale(.15) rotate(-12deg);opacity:0}70%{transform:scale(1.08) rotate(2deg);opacity:1}100%{transform:scale(1) rotate(0);opacity:1}}
+#heartBurst{position:absolute;inset:0;pointer-events:none;z-index:2;overflow:hidden}
+.burst-photo{position:absolute;width:clamp(55px,14vw,105px);height:clamp(65px,16vw,120px);object-fit:cover;border:4px solid #f3e6d9;border-radius:10px;box-shadow:0 8px 25px #10040a99;left:50%;top:50%;opacity:0;animation:flyHeart 2.8s cubic-bezier(.2,.75,.2,1) forwards}
+@keyframes flyHeart{0%{transform:translate(-50%,-50%) scale(.2) rotate(0);opacity:0}15%{opacity:1}55%{opacity:1}100%{left:var(--x);top:var(--y);transform:translate(-50%,-50%) rotate(var(--r)) scale(.82);opacity:1}}
 #final{background:linear-gradient(150deg,#4c192b,#210811)}
 .bigheart{font-size:90px;animation:pulse 1.4s infinite;filter:drop-shadow(0 0 20px #b86b7e88);background:transparent;border:0;box-shadow:none;padding:8px 20px;line-height:1;cursor:pointer}.bigheart:hover{transform:scale(1.12);filter:drop-shadow(0 0 28px #e7a0b4)}#heartMessage{display:none;max-width:680px;margin:18px auto 0;padding:18px 22px;border:1px solid var(--gold);border-radius:18px;background:#f3e6d9;color:#542033;font-family:'Amiri',serif;font-size:clamp(21px,5vw,28px);line-height:2;box-shadow:0 10px 30px #10040a55;animation:fadeIn .35s ease} @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 @keyframes pulse{50%{transform:scale(1.18)}}
@@ -82,7 +82,7 @@ footer{padding:25px;text-align:center;background:#210811;color:var(--gold);font-
 <section id="opening">
  <div class="small">مفاجأة صغيرة معمولة مخصوص ليك</div>
  <div class="gift" onclick="openGift()">🎁</div>
- <div class="photo opening-photo" id="openingPhotoWrap"><img src="photos/our-first-photo.jpg" alt="أول صورة لينا" style="height:260px"><p>أحلى بداية لحكايتنا ❤️</p></div>
+ <div class="photo opening-photo" id="openingPhotoWrap"><img src="photos/IMG-20260815-WA0041.jpg" alt="أول صورة لينا" style="height:260px"><p>أحلى بداية لحكايتنا ❤️</p></div>
  <h1>فيه حاجة حلوة مستنياك يا أحمد...</h1>
  <p>حاجة بسيطة من قلبي ليك<br>بحبك، من منة ❤️</p>
  <button onclick="openGift()">افتح هديتك 🎀</button>
@@ -117,7 +117,7 @@ footer{padding:25px;text-align:center;background:#210811;color:var(--gold);font-
   <div class="photo"><img src="photos/IMG-20261026-WA0022.jpg" alt="صورتنا الخامسة"><p>يا بخت عيني بيك، ويا بخت قلبي إنه اختارك من وسط كل الناس.. إنت حلو في كل حالاتك ❤️</p></div>
   <div class="photo"><img src="photos/IMG-20261102-WA0014.jpg" alt="صورتنا السادسة"><p>نفسي أفضل أشوفك في كل سنين عمرك، وكل سنة أحب تفاصيلك أكتر من اللي قبلها.. إنت حبيبي وأجمل أقداري ❤️</p></div>
  </div>
- <p class="small">إجمالي الصور في الموقع 15 صورة: الستة دول، ومعاهم 9 صور إضافية من photo7.jpg لحد photo15.jpg. ❤️</p>
+ <p class="small">كل الـ15 صورة من أجمل ذكرياتنا ❤️</p>
  <button onclick="go('letter')">فيه كلام عايزة أقولهولك 💌</button>
 </section>
 
@@ -211,4 +211,11 @@ footer{padding:25px;text-align:center;background:#210811;color:var(--gold);font-
   <div><strong id="totalMinutes">0</strong><span>دقيقة</span></div>
   <div><strong id="totalSeconds">0</strong><span>ثانية</span></div>
  </div>
- <div class="quote" id="loveQuote">أنت أجمل وقت عشته، وأجمل وقت 
+ <div class="quote" id="loveQuote">أنت أجمل وقت عشته، وأجمل وقت مستنياه.</div>
+ <p>وكل ثانية بتعدّي، بحبك أكتر ❤️</p><br>
+ <button onclick="go('birthday')">يلا نطفي الشمع 🎂</button>
+</section>
+
+<section id="birthday">
+ <div id="heartBurst"></div>
+ <div class="s
