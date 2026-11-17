@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#360d1b">
+<title>من منة لأحمد ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--wine:#360d1b;--cherry:#873449;--rose:#b86b7e;--cream:#f3e6d9;--gold:#d6b58a;--ink:#f8eee7;--muted:#d8bfc0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--wine);color:var(--ink);font-family:'Cairo',sans-serif;overflow-x:hidden}
+section{min-height:100vh;padding:75px 20px;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;position:relative;isolation:isolate}
+section:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 15%,#87344955,transparent 58%);z-index:-1;pointer-events:none}
+h1,h2{font-family:'Amiri',serif;font-weight:700}
+h1{font-size:clamp(38px,9vw,68px)}
+h2{font-size:clamp(30px,7vw,46px)}
+p{line-height:2.2}
+.small{letter-spacing:1px;font-size:12px;color:var(--gold)}
+button{border:1px solid #d6b58a77;border-radius:30px;padding:13px 25px;background:linear-gradient(135deg,var(--cherry),#592033);color:var(--cream);font-size:15px;cursor:pointer;box-shadow:0 8px 25px #16060d66;transition:.3s;font-family:inherit}
+button:hover{transform:translateY(-3px);filter:brightness(1.15)}
+#opening{background:radial-gradient(circle at 50% 30%,#793044 0%,#471525 48%,#210811 100%)}
+.gift{font-size:92px;cursor:pointer;animation:bounce 2s infinite;margin:25px;filter:drop-shadow(0 12px 20px #16060d88)}
+@keyframes bounce{50%{transform:translateY(-12px)}}
+#opening h1,#intro h1{color:var(--cream)}
+#opening p{margin:15px 0 30px}
+#intro{background:linear-gradient(155deg,#4a1728,#250a14)}
+.cake{font-size:85px;margin:25px;filter:drop-shadow(0 8px 20px #16060d88)}
+#eye{background:#2d0c18}
+#eye h2{color:var(--gold);margin:18px}
+#eye p{max-width:760px;font-size:17px}
+#memories,#reasons{background:linear-gradient(160deg,#4b192a,#2b0c18)}
+#memories h2,#letter h2,#reasons h2,#final h2{margin:12px;color:var(--cream)}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;width:min(760px,100%);margin:30px auto}
+.photo{border-radius:17px;background:#f3e6d9;border:4px solid #f3e6d9;box-shadow:0 8px 25px #10040a66;overflow:hidden;color:#542033}
+.photo img{width:100%;height:220px;object-fit:cover;display:block}
+.photo p{padding:10px;font-size:13px;line-height:1.9}
+#letter{background:#2b0c18}
+.envelope{background:linear-gradient(145deg,#f3e6d9,#e8d1c5);color:#542033;border:1px solid var(--gold);border-radius:18px;padding:30px 22px;width:min(680px,100%);margin:25px 0;box-shadow:0 15px 40px #10040a66}
+#letterText{display:none;line-height:2.25;text-align:right;white-space:pre-line;margin-top:20px;font-size:16px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;width:min(760px,100%);margin:30px auto}
+.reason{background:#f3e6d9;color:#542033;padding:22px 13px;border-radius:18px;min-height:115px;display:flex;align-items:center;justify-content:center;flex-direction:column;cursor:pointer;box-shadow:0 8px 20px #10040a44;transition:.3s;border:1px solid #d6b58a}
+.reason:active{transform:scale(.97)}
+.reason b{font-size:23px;color:#873449}
+.reason p{display:none;font-size:14px;line-height:2;margin-top:12px;color:#542033}
+.reason.active{background:#fff8f1}
+.reason.active p{display:block}
+#birthday{background:radial-gradient(circle at center,#612338,#250a14 75%);overflow:hidden}
+#birthday h2{font-size:clamp(32px,7vw,48px);color:var(--cream)}
+#candle{font-size:90px;margin:25px;cursor:pointer;position:relative;z-index:3}
+#birthdayMessage{display:none;font-family:'Amiri';font-size:30px;color:var(--gold);margin:15px;position:relative;z-index:3}
+#heartBurst{position:absolute;inset:0;pointer-events:none;z-index:4;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-template-rows:repeat(5,minmax(0,1fr));gap:4px;width:min(430px,92vw);height:min(410px,88vw);margin:auto;place-content:center;overflow:visible;filter:drop-shadow(0 12px 24px #10040a99)}
+.burst-photo{width:100%;height:100%;min-width:0;min-height:0;object-fit:cover;border:2px solid #f3e6d9;border-radius:8px;box-shadow:0 5px 14px #10040a88;opacity:0;animation:heartTileIn .75s cubic-bezier(.2,.75,.2,1) forwards}
+@keyframes heartTileIn{0%{transform:scale(.15) rotate(-12deg);opacity:0}70%{transform:scale(1.08) rotate(2deg);opacity:1}100%{transform:scale(1) rotate(0);opacity:1}}
+#final{background:linear-gradient(150deg,#4c192b,#210811)}
+.bigheart{font-size:90px;animation:pulse 1.4s infinite;filter:drop-shadow(0 0 20px #b86b7e88);background:transparent;border:0;box-shadow:none;padding:8px 20px;line-height:1;cursor:pointer}.bigheart:hover{transform:scale(1.12);filter:drop-shadow(0 0 28px #e7a0b4)}#heartMessage{display:none;max-width:680px;margin:18px auto 0;padding:18px 22px;border:1px solid var(--gold);border-radius:18px;background:#f3e6d9;color:#542033;font-family:'Amiri',serif;font-size:clamp(21px,5vw,28px);line-height:2;box-shadow:0 10px 30px #10040a55;animation:fadeIn .35s ease} @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{50%{transform:scale(1.18)}}
+#lastMessage{display:none;max-width:700px;line-height:2.3;margin:30px auto;font-size:16px;text-align:right;white-space:pre-line;background:#f3e6d9;color:#542033;padding:25px 20px;border-radius:20px;box-shadow:0 10px 35px #10040a66}
+#birthdayWish{max-width:760px;background:#f3e6d9;color:#542033;border:1px solid var(--gold);border-radius:22px;padding:22px;margin:22px auto;line-height:2.3}
+#birthdayWish strong{color:#873449}
+#loveCounter{background:#210811}
+#loveCounter h2{color:var(--gold);margin:12px}
+.timer{display:flex;justify-content:center;gap:10px;width:min(650px,100%);margin:25px auto;direction:ltr}
+.timer div{background:linear-gradient(145deg,#612338,#360d1b);border:1px solid var(--gold);border-radius:15px;padding:17px 8px;min-width:0;flex:1;box-shadow:0 8px 25px #0004}
+.timer strong{display:block;color:var(--gold);font-size:clamp(18px,5vw,30px);font-variant-numeric:tabular-nums}
+.timer span{color:var(--cream);font-size:13px}
+.love-words .reason{cursor:default;min-height:100px}.love-words .reason p{font-size:15px;line-height:2.1;margin:0;color:#542033}.opening-photo{width:min(260px,78%);margin:10px auto 22px}.quote{max-width:720px;min-height:100px;margin:20px auto;color:var(--cream);font-family:'Amiri',serif;font-size:clamp(22px,5vw,30px);line-height:1.9;transition:opacity .4s}
+.musicbar{background:#f3e6d9;color:#542033;border:1px solid var(--gold);border-radius:18px;padding:18px;width:min(440px,92%);margin:25px auto;text-align:center}
+.musicbar p{font-size:13px;margin:7px 0 12px}
+.musicbar audio{width:100%}
+footer{padding:25px;text-align:center;background:#210811;color:var(--gold);font-size:13px}
+.heart{position:fixed;bottom:-30px;pointer-events:none;animation:floatUp 7s linear forwards;z-index:5}
+@keyframes floatUp{to{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+@media(max-width:450px){.gallery{gap:9px}.photo img{height:165px}.cards{gap:9px}section{padding:60px 17px}#letterText{font-size:15px}.reason{padding:18px 9px}.reason p{font-size:13px}#lastMessage{font-size:15px;padding:20px 15px}.timer{gap:5px}.timer div{padding:12px 3px}.timer span{font-size:11px}}
+</style>
+</head>
+<body>
+
+<section id="opening">
+ <div class="small">مفاجأة صغيرة معمولة مخصوص ليك</div>
+ <div class="gift" onclick="openGift()">🎁</div>
+ <div class="photo opening-photo" id="openingPhotoWrap"><img src="photos/our-first-photo.jpg" alt="أول صورة لينا" style="height:260px"><p>أحلى بداية لحكايتنا ❤️</p></div>
+ <h1>فيه حاجة حلوة مستنياك يا أحمد...</h1>
+ <p>حاجة بسيطة من قلبي ليك<br>بحبك، من منة ❤️</p>
+ <button onclick="openGift()">افتح هديتك 🎀</button>
+</section>
+
+<section id="intro">
+ <div class="small">النهارده يومك إنت</div>
+ <h1>كل سنة وإنت طيب<br>يا أحمد ❤️</h1>
+ <div class="cake">🎂</div>
+ <p>يارب يومك يبقى حلو شبه قلبك،<br>وسنتك الجديدة تكون مليانة فرحة وراحة بال.</p>
+ <div id="birthdayWish"><strong>عيد ميلادك مش مجرد يوم حلو في السنة…</strong><br>ده أجمل حدث حصل في الدنيا بالنسبالي، لأنه اليوم اللي اتولدت فيه إنت، واليوم اللي بدأ فيه وجود الشخص اللي بقى أجمل حاجة في حياتي. ❤️<br><br>كل سنة والدنيا منورة بوجودك يا أحمد.</div>
+ <p>12 يناير 2006 — الخميس<br>12 ذو الحجة 1426 هـ</p>
+ <button onclick="go('eye')">يلا نكمل المفاجأة ↓</button>
+</section>
+
+<section id="eye">
+ <div class="small">فيه كلام جوايا ليك...</div>
+ <h2>عيني بتحب تشوفك ❤️</h2>
+ <p>عيني بتحب تشوفك، وودني بتحب تسمع صوتك، وقلبي بيحب وجودك، ودماغي بتحب تصور كل لحظة بتكون فيها معايا عشان ترجع تعيشها من تاني كل ما توحشني، وإيدي بتحب تلمسك وتحس إنك قريب مني.. كل حتة فيا ليها طريقة بتحبك بيها، وكأن كل حاجة جوايا اختارت تحبك إنت بالذات. ❤️</p>
+ <br><button onclick="go('memories')">شوف صورنا سوا 📸</button>
+</section>
+
+<section id="memories">
+ <div class="small">حاجات صغيرة بس غالية عندي</div>
+ <h2>صور وذكريات ❤️</h2>
+ <p>كل صورة ليها حكاية، وكل لحظة ليها مكان في قلبي.</p>
+ <div class="gallery" id="gallery">
+  <div class="photo"><img src="photos/IMG-20260815-WA0041.jpg" alt="صورتنا الأولى"><p>حتى لو الصورة مش مثالية، كفاية أوي إنك فيها.. وجودك لوحده بيخلي أي صورة حلوة في عيني ❤️</p></div>
+  <div class="photo"><img src="photos/IMG-20260815-WA0050.jpg" alt="صورتنا التانية"><p>كل سنة وإنت مالي عيني وقلبي، وكل سنة وأنا لسه بشوفك أجمل حد في الدنيا 🥹</p></div>
+  <div class="photo"><img src="photos/IMG-20260815-WA0056.jpg" alt="صورتنا التالتة"><p>مش محتاجة الصورة تبقى أحلى صورة، طول ما إنت فيها فهي بالنسبالي أحلى ذكرى ❤️</p></div>
+  <div class="photo"><img src="photos/IMG-20260815-WA0071.jpg" alt="صورتنا الرابعة"><p>أنا ممكن أفضل أتفرج عليك بالساعات ومزهقش، عشان عيني بتحبك قبل قلبي حتى ❤️</p></div>
+  <div class="photo"><img src="photos/IMG-20261026-WA0022.jpg" alt="صورتنا الخامسة"><p>يا بخت عيني بيك، ويا بخت قلبي إنه اختارك من وسط كل الناس.. إنت حلو في كل حالاتك ❤️</p></div>
+  <div class="photo"><img src="photos/IMG-20261102-WA0014.jpg" alt="صورتنا السادسة"><p>نفسي أفضل أشوفك في كل سنين عمرك، وكل سنة أحب تفاصيلك أكتر من اللي قبلها.. إنت حبيبي وأجمل أقداري ❤️</p></div>
+ </div>
+ <p class="small">إجمالي الصور في الموقع 15 صورة: الستة دول، ومعاهم 9 صور إضافية من photo7.jpg لحد photo15.jpg. ❤️</p>
+ <button onclick="go('letter')">فيه كلام عايزة أقولهولك 💌</button>
+</section>
+
+<section id="letter">
+ <div class="small">كلام من قلبي ليك</div><h2>جواب صغير لحبيبي 💌</h2>
+ <div class="envelope">
+  <div style="font-size:42px">💌</div><h2>من منة لأحمد</h2><p>افتح الجواب واقرأه للآخر ❤️</p><br>
+  <button onclick="showLetter()">افتح جوابك يا حبيبي</button>
+  <div id="letterText">كل سنة وانت طيب يا حبيبي ❤️❤️♥️ وعقبال مليون سنة وانت معايا، بجد مش عارفة اقولك ايه غير اني مبسوطة اوي انك في حياتي وانك بقيت اقرب حد ليا، بحب كلامنا سوا وكل تفاصيلنا حتى الحاجات الصغيرة اللي ممكن انت متاخدش بالك منها، بحب اني احكيلك يومي وابقى عايزة اقولك على اي حاجة بتحصلي، وبحب وجودك في حياتي عموما.
+
+نفسي اشوفك دايما مبسوط وناجح وتحقق كل حاجة نفسك فيها، واكون جنبك في كل حاجة حلوة جاية ليك، وحتى لو الدنيا مش ماشية زي ما انت عايز انا هفضل جنبك ونعدي كل حاجة سوا.
+
+عايزاك تعرف انك غالي عندي اوي وانك مش مجرد حد بحبه وخلاص، انت بقيت جزء من يومي ومن حياتي ومش متخيلة تفاصيل كثير من غيرك.
+
+يارب السنة دي تكون احلى عليك من كل اللي فات، واشوفك فيها مبسوط ومرتاح وبتحقق اللي نفسك فيه، ونفضل مع بعض ونعيش ايام حلوة كتير ونفتكرها ونضحك عليها بعدين.
+
+بحبك اوي يا حبيبي وكل سنة وانت معايا ومنور حياتي كده دايما، وربنا يخليك ليا يا رب ❤️❤️
+
+من قلب منة ليك.</div>
+ </div>
+ <button onclick="go('reasons')">لسه فيه كلام تاني 💗</button>
+</section>
+
+<section id="reasons">
+ <div class="small">بمناسبة ما كملت ٢١ سنة</div><h2>21 سبب بيخلّوك مميز عندي ❤️</h2>
+ <p>21 سنة من عمرك، وعندي أسباب أكتر بكتير أحبك عشانها... دوس على كل رقم واكتشف اللي جواه 🥹</p>
+ <div class="cards">
+  <div class="reason" onclick="this.classList.toggle('active')"><b>01 ❤️</b><p>عشان رجولتك، عشان فيك معنى الرجولة اللي مش بيتقاس بالقوة ولا بالكلام، بيتقاس بالأمان والاحتواء والمواقف. بحب إحساسي إنك راجل أقدر أستند عليه، وإن وجودك جنبي لوحده بيطمن قلبي. ❤️</p></div>
+  <div class="reason" onclick="this.classList.toggle('active')"><b>02 ❤️</b><p>عشان حبك، عشان حبك مش مجرد كلام حلو بيتقال، ده إحساس بيوصلني من أبسط تفاصيلك، وبيخليني أحس إني محظوظة إن قلبي اختارك إنت بالذات.</p></div>
+  <div class="reason" onclick="this.classList.toggle('active')"><b>03 🤍</b><p>عشان وفائك، عشان الوفاء فيك من أجمل الحاجات، وبحب إنك لما تحب حد بتبقى مشاعرك حقيقية، وإن وجودك مش حاجة مؤقتة، إنت من الناس اللي وجودها بيتحس وبيفرق.</p></div>
+  <div class="reason" onclick="this.classList.toggle('active')"><b>04 🥹</b><p>عشان غيرتك، عشان غيرتك بتحسسني إني غالية عندك، وإن ليا مكانة خاصة في قلبك، وبحب اهتمامك بيا وبأدق تفاصيلي، وبحب إحساس إنك بتخاف عليا وبتحبني ومشاعري فارقة معاك. ❤️</p></div>
+  <div class="reason" onclick="this.classList.toggle('active')"><b>05 💗</b><p>عشان قلبك، عشان قلبك من جوا أجمل بكتير من أي حاجة ممكن تتشاف، وعشان بحب طيبتك والحنية اللي فيك، وبحب إن لسه جواك جزء جميل مهما الدنيا حصل فيها.</p></div>
+  <div class="reason" onclick="this.classList.toggle('active')"><b>06 👀</b><p>عشان عينيك، عشان عينيك مش مجرد عيون حلوة، دي أكتر حاجة ممكن أفضل باصة فيها ومزهقش، بحس إن فيها كلام كتير مش محتاج يتقال، وكل مرة ببصلك بحس إني لسه بتعرف عليك وبحبك من الأول. ❤️</p></div>
+  <div class="reason" onclick="this.classList.toggle('active')"><b>07 ❤️</b><p>عشان ضحكتك، اللي بالنسبالي قادرة تغيّر شكل يوم كامل، ونفسي أفضل دايمًا السبب اللي يخليها موجودة على وشك.</p></div>
+  <div class="reason" onclick="this.classList.toggle('active')"><b>08 🎶</b><p>عشان صوتك، اللي مهما سمعته بيفضل ليه نفس التأثير عليا، وكأن قلبي بيعرف يهدى أول ما يسمعه.</p></div>
+  <div class="reason" onclick="this.classList.toggle('active')"><b>09 ✨</b><p>عشان تفاصيلك الصغيرة، اللي يمكن إنت متاخدش بالك منها، بس أنا بحفظها واحدة واحدة وبحبها كأنها حاجات تخصني.</p></div>
+  <div class="reason" onclick="this.classList.toggle('active')"><b>10 ❤️</b><p>عشان طريقتك في الكلام والهزار، عشان حتى أبسط محادثة معاك بتبقى حاجة بحب أفتكرها.</p></div>
+  <div class="reason" onclick="this.classList.toggle('active')"><b>11 ❤️</b><p>عشان وجودك، اللي بيخلّي الأماكن العادية تبقى مميزة، واللحظات البسيطة تتحول لذكريات عمري ما أحب أنساها.</p></div>
+  <div class="reason" onclick="this.classList.toggle('active')"><b>12 🫂</b><p>عشان حنيتك، اللي بتخليني أحس إن الدنيا لسه فيها مكان آمن أقدر أكون فيه على طبيعتي من غير ما أخاف.</p></div>
+  <div class="reason" onclick="this.classList.toggle('active')"><b>13 🌟</b><p>عشان طموحك، عشان بحب أشوفك بتسعى وبتحاول وبتقرب من أحلامك، ونفسي أكون أول واحدة تفرح بنجاحك وتفتخر بيك.</p></div>
+  <div class="reason" onclick="this.classList.toggle('active')"><b>14 💭</b><p>عشان عقلك، وطريقة تفكيرك، والحاجات اللي بتخليني أحب أسمع رأيك وأحكيلك وأشاركك كل اللي جوايا.</p></div>
+  <div class="reason" onclick="this.classList.toggle('active')"><b>15 🥰</b><p>عشان إنك بتعرف تخليني أبتسم من غير ما تحاول، لمجرد إنك إنت موجود وبتكلمني.</p></div>
+  <div class="reason" onclick="this.classList.toggle('active')"><b>16 💌</b><p>عشان قربك، عشان حتى لو كنت لسه شايفاك من شوية، بلاقي نفسي وحشتني وعايزة أشوفك تاني.</p></div>
+  <div class="reason" onclick="this.classList.toggle('active')"><b>17 ❤️</b><p>عشان اهتمامك، عشان التفاصيل اللي بتفتكرها عني، والسؤال الصغير اللي ممكن بالنسبالك عادي، بس بالنسبالي معناه كبير أوي.</p></div>
+  <div class="reason" onclick="this.classList.toggle('active')"><b>18 😍</b><p>عشان شكلك، عشان مهما حاولت أوصفلك إنت حلو قد إيه في عيني، الكلام دايمًا بيكون أقل بكتير من اللي جوايا.</p></div>
+  <div class="reason" onclick="this.classList.toggle('active')"><b>19 ❤️</b><p>عشان شخصيتك، بكل الحاجات اللي بتميزك، وحتى الحاجات اللي بتخليك مختلف عن أي حد تاني، أنا مش عايزاك تبقى شبه حد، أنا بحبك إنت.</p></div>
+  <div class="reason" onclick="this.classList.toggle('active')"><b>20 💍</b><p>عشان إنت بقيت جزء من أحلامي الجاية، بقيت بتدخل في كل صورة بتخيلها لمستقبلي، ونفسي أشوفك معايا في كل سنة جاية.</p></div>
+  <div class="reason" onclick="this.classList.toggle('active')"><b>21 💖</b><p>عشان إنت أحمد، عشان لو فضلت أكتب أسباب من هنا لبكرة مش هخلص، ولو اتخيرت أحب مين من أول وجديد، قلبي هيروحلك إنت كل مرة. مش عشان إنت كامل، لكن عشان إنت الشخص اللي قلبي ارتاحله واختاره وحب كل تفاصيله. ❤️</p></div>
+ </div>
+ <p style="line-height:2;margin:15px auto;max-width:500px">21 سنة من عمرك، و21 سبب من أسباب حبي ليك… ولسه عندي أسباب أكتر من إني أقدر أعدّها. كل سنة وإنت حبيبي يا أحمد. ❤️</p>
+ <button onclick="go('ourWords')">فيه كلام كتير جوايا ليك ❤️</button>
+</section>
+
+<section id="ourWords">
+ <div class="small">كل كلمة اخترتها ليك من قلبي</div>
+ <h2>كلام عمري ما هزهق أقولهولك ❤️</h2>
+ <p>دي مش مجرد جمل… دي حاجات كتير جوايا نفسي تفضل عارفها.</p>
+ <div class="cards love-words">
+  <div class="reason"><p style="display:block">إنت مش مجرد حبيبي، إنت أجمل حاجة حصلتلي في حياتي.</p></div>
+  <div class="reason"><p style="display:block">وسط كل الناس، قلبي ارتاح واختار إنت.</p></div>
+  <div class="reason"><p style="display:block">أنا مش بس بحبك، أنا بحب الحياة وإنت فيها.</p></div>
+  <div class="reason"><p style="display:block">إنت المكان اللي قلبي بيرجعله مهما الدنيا خدتني.</p></div>
+  <div class="reason"><p style="display:block">لو ليا أمنية واحدة، هتكون إنك تفضل جنبي العمر كله.</p></div>
+  <div class="reason"><p style="display:block">إنت جوزي وحبيبي وأماني وبيتي، وسندي وضهري اللي بتحامى فيه من الدنيا.</p></div>
+  <div class="reason"><p style="display:block">معنى الأمان بالنسبالي ليه شكل واحد… وهو إنت، ومهما أقول مش هوفيك حقك يا حبيب عمري الأول والأخير.</p></div>
+  <div class="reason"><p style="display:block">في عز خوفي، مجرد وجودك بيطمني، وكأن الدنيا كلها بتهون طول ما إنت جنبي.</p></div>
+  <div class="reason"><p style="display:block">أنا عارفة إن الدنيا مش دايمًا سهلة، بس وجودك بيخليني أقوى وأقدر أواجهها.</p></div>
+  <div class="reason"><p style="display:block">نفسي أكون ليك نفس السند والراحة والأمان اللي إنت بتديهولي.</p></div>
+  <div class="reason"><p style="display:block">مش محتاجة من الدنيا وعد إنها تبقى سهلة، كفاية إننا نواجهها سوا.</p></div>
+  <div class="reason"><p style="display:block">مهما شوفتك، بفضل مشتاقالك كأني بقالي عمر ما شوفتكش.</p></div>
+  <div class="reason"><p style="display:block">صوتك بالنسبالي مش مجرد صوت، ده الحاجة اللي بتقدر تهدي قلبي مهما كان يومي صعب.</p></div>
+  <div class="reason"><p style="display:block">ساعات ببقى عايزة أوقف الوقت وإحنا سوا، عشان اللحظات اللي معاك بتخلص أسرع مما أتمنى.</p></div>
+  <div class="reason"><p style="display:block">حتى وإنت بعيد، بتفضل حاضر في كل تفصيلة في يومي.</p></div>
+  <div class="reason"><p style="display:block">وحشتني مش كلمة بقولها، ده إحساس بيصحى جوايا كل ما تبعد عن عيني.</p></div>
+  <div class="reason"><p style="display:block">نفسي كل مرة أودعك تكون آخر مرة أبعد فيها عنك، ونفضل سوا على طول.</p></div>
+ </div>
+ <div class="envelope" style="margin-top:10px">
+  <h2 style="color:#873449">ومن أغنيتنا… لمعنى بحسه معاك 🎶</h2>
+  <p>لما ببقى معاك بنسى كل اللي حواليا، وبحس إن اللحظة الواحدة معاك بالدنيا كلها. كنت بحلم بيك، ودلوقتي وجودك قدامي حقيقة بحمد ربنا عليها. نفسي أفضل قريبة منك، وأعيش عمري جنبك، وأواجه السنين وأنا مطمنة إننا سوا. مش فارق معايا الطريق هياخدنا فين، طول ما إيدك في إيدي وقلبي مطمن بيك. ❤️</p>
+ </div>
+ <button onclick="go('loveCounter')">تعالى نشوف حكايتنا بقالها قد إيه ❤️</button>
+</section>
+
+<section id="loveCounter">
+ <div class="small">من يوم ما حكايتنا بدأت</div>
+ <h2>كل ثانية معاك حكاية ❤️</h2>
+ <p>بدأنا يوم 21 أبريل 2025 — الساعة 4:00 العصر</p>
+ <div class="timer">
+  <div><strong id="totalDays">0</strong><span>يوم</span></div>
+  <div><strong id="totalHours">0</strong><span>ساعة</span></div>
+  <div><strong id="totalMinutes">0</strong><span>دقيقة</span></div>
+  <div><strong id="totalSeconds">0</strong><span>ثانية</span></div>
+ </div>
+ <div class="quote" id="loveQuote">أنت أجمل وقت عشته، وأجمل وقت 
