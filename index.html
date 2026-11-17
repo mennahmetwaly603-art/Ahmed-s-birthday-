@@ -52,8 +52,8 @@ button:hover{transform:translateY(-3px);filter:brightness(1.15)}
 #birthday h2{font-size:clamp(32px,7vw,48px);color:var(--cream)}
 #candle{font-size:90px;margin:25px;cursor:pointer;position:relative;z-index:3}
 #birthdayMessage{display:none;font-family:'Amiri';font-size:30px;color:var(--gold);margin:15px;position:relative;z-index:3}
-#heartBurst{position:absolute;inset:0;pointer-events:none;z-index:2;overflow:hidden}
-.burst-photo{position:absolute;width:clamp(55px,14vw,105px);height:clamp(65px,16vw,120px);object-fit:cover;border:4px solid #f3e6d9;border-radius:10px;box-shadow:0 8px 25px #10040a99;left:50%;top:50%;opacity:0;animation:flyHeart 2.8s cubic-bezier(.2,.75,.2,1) forwards}
+#heartBurst{position:fixed;inset:0;pointer-events:none;z-index:20;overflow:hidden;display:none}
+.burst-photo{position:absolute;width:clamp(55px,14vw,105px);height:clamp(65px,16vw,120px);object-fit:cover;border:4px solid #f3e6d9;border-radius:10px;box-shadow:0 8px 25px #10040a99;left:50%;top:50%;opacity:0;animation:flyHeart 3s cubic-bezier(.2,.75,.2,1) forwards}
 @keyframes flyHeart{0%{transform:translate(-50%,-50%) scale(.2) rotate(0);opacity:0}15%{opacity:1}55%{opacity:1}100%{left:var(--x);top:var(--y);transform:translate(-50%,-50%) rotate(var(--r)) scale(.82);opacity:1}}
 #final{background:linear-gradient(150deg,#4c192b,#210811)}
 .bigheart{font-size:90px;animation:pulse 1.4s infinite;filter:drop-shadow(0 0 20px #b86b7e88);background:transparent;border:0;box-shadow:none;padding:8px 20px;line-height:1;cursor:pointer}.bigheart:hover{transform:scale(1.12);filter:drop-shadow(0 0 28px #e7a0b4)}#heartMessage{display:none;max-width:680px;margin:18px auto 0;padding:18px 22px;border:1px solid var(--gold);border-radius:18px;background:#f3e6d9;color:#542033;font-family:'Amiri',serif;font-size:clamp(21px,5vw,28px);line-height:2;box-shadow:0 10px 30px #10040a55;animation:fadeIn .35s ease} @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
@@ -75,6 +75,63 @@ footer{padding:25px;text-align:center;background:#210811;color:var(--gold);font-
 .heart{position:fixed;bottom:-30px;pointer-events:none;animation:floatUp 7s linear forwards;z-index:5}
 @keyframes floatUp{to{transform:translateY(-110vh) rotate(360deg);opacity:0}}
 @media(max-width:450px){.gallery{gap:9px}.photo img{height:165px}.cards{gap:9px}section{padding:60px 17px}#letterText{font-size:15px}.reason{padding:18px 9px}.reason p{font-size:13px}#lastMessage{font-size:15px;padding:20px 15px}.timer{gap:5px}.timer div{padding:12px 3px}.timer span{font-size:11px}}
+
+/* Smooth cinematic pacing */
+:root{scroll-padding-top:18px}
+html{scroll-behavior:smooth;scrollbar-color:#873449 #210811}
+body{
+ background:
+  radial-gradient(ellipse at 15% 12%,rgba(184,107,126,.12),transparent 34%),
+  radial-gradient(ellipse at 85% 72%,rgba(135,52,73,.13),transparent 38%),
+  #210811;
+}
+section{
+ min-height:100svh;
+ padding:clamp(72px,10vh,112px) 20px;
+ overflow:hidden;
+}
+section:before{
+ background:
+  radial-gradient(ellipse at 50% 12%,rgba(135,52,73,.22),transparent 54%),
+  radial-gradient(ellipse at 10% 90%,rgba(214,181,138,.045),transparent 35%);
+ transition:opacity 1s ease;
+}
+section:nth-of-type(even){background-color:rgba(37,8,20,.22)}
+section:nth-of-type(odd){background-color:rgba(74,23,40,.12)}
+h1,h2,p,.small,.photo,.reason,.envelope,.timer,.quote,.cake,.gift,button{
+ transition:transform .65s cubic-bezier(.2,.7,.2,1),opacity .65s ease,filter .65s ease,box-shadow .65s ease;
+}
+button{backdrop-filter:blur(8px);-webkit-tap-highlight-color:transparent}
+button:active{transform:scale(.97)}
+.photo,.reason,.envelope,.timer div{
+ box-shadow:0 12px 34px rgba(8,0,5,.25);
+}
+.photo{transition:transform .5s ease,box-shadow .5s ease}
+.photo:active{transform:scale(.985)}
+.gift{animation:bounce 2.8s ease-in-out infinite;filter:drop-shadow(0 16px 28px rgba(0,0,0,.28))}
+.heart{will-change:transform,opacity}
+.reveal-ready section > *{
+ opacity:0;
+ transform:translateY(24px);
+}
+.reveal-ready section.is-visible > *{
+ opacity:1;
+ transform:translateY(0);
+}
+.reveal-ready section.is-visible > *:nth-child(1){transition-delay:.04s}
+.reveal-ready section.is-visible > *:nth-child(2){transition-delay:.10s}
+.reveal-ready section.is-visible > *:nth-child(3){transition-delay:.16s}
+.reveal-ready section.is-visible > *:nth-child(4){transition-delay:.22s}
+.reveal-ready section.is-visible > *:nth-child(5){transition-delay:.28s}
+.reveal-ready section.is-visible > *:nth-child(6){transition-delay:.34s}
+.reveal-ready section.is-visible > *:nth-child(7){transition-delay:.40s}
+.reveal-ready section.is-visible > *:nth-child(8){transition-delay:.46s}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+ .reveal-ready section > *{opacity:1;transform:none}
+}
+
 </style>
 </head>
 <body>
@@ -83,7 +140,7 @@ footer{padding:25px;text-align:center;background:#210811;color:var(--gold);font-
  <div class="small">مفاجأة صغيرة معمولة مخصوص ليك</div>
  <div class="gift" onclick="openGift()">🎁</div>
  <button id="musicStart" type="button" onclick="startMusic()">شغّلي أغنيتنا كلي ملكك 🎵</button>
- <div class="photo opening-photo" id="openingPhotoWrap"><img src="photos/IMG-20260815-WA0041.jpg" alt="أول صورة لينا" style="height:260px"><p>أحلى بداية لحكايتنا ❤️</p></div>
+ <div class="photo opening-photo" id="openingPhotoWrap"><img src="./photos/IMG-20260815-WA0041.jpg" alt="أول صورة لينا" style="height:260px"><p>أحلى بداية لحكايتنا ❤️</p></div>
  <h1>فيه حاجة حلوة مستنياك يا أحمد...</h1>
  <p>حاجة بسيطة من قلبي ليك<br>بحبك، من منة ❤️</p>
  <button onclick="openGift()">افتح هديتك 🎀</button>
@@ -111,12 +168,12 @@ footer{padding:25px;text-align:center;background:#210811;color:var(--gold);font-
  <h2>صور وذكريات ❤️</h2>
  <p>كل صورة ليها حكاية، وكل لحظة ليها مكان في قلبي.</p>
  <div class="gallery" id="gallery">
-  <div class="photo"><img src="photos/IMG-20260815-WA0041.jpg" alt="صورتنا الأولى"><p>حتى لو الصورة مش مثالية، كفاية أوي إنك فيها.. وجودك لوحده بيخلي أي صورة حلوة في عيني ❤️</p></div>
-  <div class="photo"><img src="photos/IMG-20260815-WA0050.jpg" alt="صورتنا التانية"><p>كل سنة وإنت مالي عيني وقلبي، وكل سنة وأنا لسه بشوفك أجمل حد في الدنيا 🥹</p></div>
-  <div class="photo"><img src="photos/IMG-20260815-WA0056.jpg" alt="صورتنا التالتة"><p>مش محتاجة الصورة تبقى أحلى صورة، طول ما إنت فيها فهي بالنسبالي أحلى ذكرى ❤️</p></div>
-  <div class="photo"><img src="photos/IMG-20260815-WA0071.jpg" alt="صورتنا الرابعة"><p>أنا ممكن أفضل أتفرج عليك بالساعات ومزهقش، عشان عيني بتحبك قبل قلبي حتى ❤️</p></div>
-  <div class="photo"><img src="photos/IMG-20261026-WA0022.jpg" alt="صورتنا الخامسة"><p>يا بخت عيني بيك، ويا بخت قلبي إنه اختارك من وسط كل الناس.. إنت حلو في كل حالاتك ❤️</p></div>
-  <div class="photo"><img src="photos/IMG-20261102-WA0014.jpg" alt="صورتنا السادسة"><p>نفسي أفضل أشوفك في كل سنين عمرك، وكل سنة أحب تفاصيلك أكتر من اللي قبلها.. إنت حبيبي وأجمل أقداري ❤️</p></div>
+  <div class="photo"><img src="./photos/IMG-20260815-WA0041.jpg" alt="صورتنا الأولى"><p>حتى لو الصورة مش مثالية، كفاية أوي إنك فيها.. وجودك لوحده بيخلي أي صورة حلوة في عيني ❤️</p></div>
+  <div class="photo"><img src="./photos/IMG-20260815-WA0050.jpg" alt="صورتنا التانية"><p>كل سنة وإنت مالي عيني وقلبي، وكل سنة وأنا لسه بشوفك أجمل حد في الدنيا 🥹</p></div>
+  <div class="photo"><img src="./photos/IMG-20260815-WA0056.jpg" alt="صورتنا التالتة"><p>مش محتاجة الصورة تبقى أحلى صورة، طول ما إنت فيها فهي بالنسبالي أحلى ذكرى ❤️</p></div>
+  <div class="photo"><img src="./photos/IMG-20260815-WA0071.jpg" alt="صورتنا الرابعة"><p>أنا ممكن أفضل أتفرج عليك بالساعات ومزهقش، عشان عيني بتحبك قبل قلبي حتى ❤️</p></div>
+  <div class="photo"><img src="./photos/IMG-20261026-WA0022.jpg" alt="صورتنا الخامسة"><p>يا بخت عيني بيك، ويا بخت قلبي إنه اختارك من وسط كل الناس.. إنت حلو في كل حالاتك ❤️</p></div>
+  <div class="photo"><img src="./photos/IMG-20261102-WA0014.jpg" alt="صورتنا السادسة"><p>نفسي أفضل أشوفك في كل سنين عمرك، وكل سنة أحب تفاصيلك أكتر من اللي قبلها.. إنت حبيبي وأجمل أقداري ❤️</p></div>
  </div>
  <p class="small">كل الـ15 صورة من أجمل ذكرياتنا ❤️</p>
  <button onclick="go('letter')">فيه كلام عايزة أقولهولك 💌</button>
@@ -184,34 +241,4 @@ footer{padding:25px;text-align:center;background:#210811;color:var(--gold);font-
   <div class="reason"><p style="display:block">لو ليا أمنية واحدة، هتكون إنك تفضل جنبي العمر كله.</p></div>
   <div class="reason"><p style="display:block">إنت جوزي وحبيبي وأماني وبيتي، وسندي وضهري اللي بتحامى فيه من الدنيا.</p></div>
   <div class="reason"><p style="display:block">معنى الأمان بالنسبالي ليه شكل واحد… وهو إنت، ومهما أقول مش هوفيك حقك يا حبيب عمري الأول والأخير.</p></div>
-  <div class="reason"><p style="display:block">في عز خوفي، مجرد وجودك بيطمني، وكأن الدنيا كلها بتهون طول ما إنت جنبي.</p></div>
-  <div class="reason"><p style="display:block">أنا عارفة إن الدنيا مش دايمًا سهلة، بس وجودك بيخليني أقوى وأقدر أواجهها.</p></div>
-  <div class="reason"><p style="display:block">نفسي أكون ليك نفس السند والراحة والأمان اللي إنت بتديهولي.</p></div>
-  <div class="reason"><p style="display:block">مش محتاجة من الدنيا وعد إنها تبقى سهلة، كفاية إننا نواجهها سوا.</p></div>
-  <div class="reason"><p style="display:block">مهما شوفتك، بفضل مشتاقالك كأني بقالي عمر ما شوفتكش.</p></div>
-  <div class="reason"><p style="display:block">صوتك بالنسبالي مش مجرد صوت، ده الحاجة اللي بتقدر تهدي قلبي مهما كان يومي صعب.</p></div>
-  <div class="reason"><p style="display:block">ساعات ببقى عايزة أوقف الوقت وإحنا سوا، عشان اللحظات اللي معاك بتخلص أسرع مما أتمنى.</p></div>
-  <div class="reason"><p style="display:block">حتى وإنت بعيد، بتفضل حاضر في كل تفصيلة في يومي.</p></div>
-  <div class="reason"><p style="display:block">وحشتني مش كلمة بقولها، ده إحساس بيصحى جوايا كل ما تبعد عن عيني.</p></div>
-  <div class="reason"><p style="display:block">نفسي كل مرة أودعك تكون آخر مرة أبعد فيها عنك، ونفضل سوا على طول.</p></div>
- </div>
- <div class="envelope" style="margin-top:10px">
-  <h2 style="color:#873449">ومن أغنيتنا… لمعنى بحسه معاك 🎶</h2>
-  <p>لما ببقى معاك بنسى كل اللي حواليا، وبحس إن اللحظة الواحدة معاك بالدنيا كلها. كنت بحلم بيك، ودلوقتي وجودك قدامي حقيقة بحمد ربنا عليها. نفسي أفضل قريبة منك، وأعيش عمري جنبك، وأواجه السنين وأنا مطمنة إننا سوا. مش فارق معايا الطريق هياخدنا فين، طول ما إيدك في إيدي وقلبي مطمن بيك. ❤️</p>
- </div>
- <button onclick="go('loveCounter')">تعالى نشوف حكايتنا بقالها قد إيه ❤️</button>
-</section>
-
-<section id="loveCounter">
- <div class="small">من يوم ما حكايتنا بدأت</div>
- <h2>كل ثانية معاك حكاية ❤️</h2>
- <p>بدأنا يوم 21 أبريل 2025 — الساعة 4:00 العصر</p>
- <div class="timer">
-  <div><strong id="totalDays">0</strong><span>يوم</span></div>
-  <div><strong id="totalHours">0</strong><span>ساعة</span></div>
-  <div><strong id="totalMinutes">0</strong><span>دقيقة</span></div>
-  <div><strong id="totalSeconds">0</strong><span>ثانية</span></div>
- </div>
- <div class="quote" id="loveQuote">أنت أجمل وقت عشته، وأجمل وقت مستنياه.</div>
- <p>وكل ثانية بتعدّي، بحبك أكتر ❤️</p><br>
- <button onclick="go('birthday')">يلا نطفي
+  <div class
