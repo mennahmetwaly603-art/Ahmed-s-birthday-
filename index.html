@@ -64,7 +64,7 @@
 <div class="reason" role="button" tabindex="0" onclick="toggleReason(this)"><b>21 💖</b><p>عشان إنت أحمد، ولو اتخيرت أحب مين من أول وجديد، قلبي هيروحلك إنت كل مرة. مش عشان إنت كامل، لكن عشان إنت الشخص اللي قلبي ارتاحله واختاره. ❤️</p></div>
 </div><p style="line-height:2;margin:15px auto;max-width:500px">21 سنة من عمرك، و21 سبب من أسباب حبي ليك… ولسه عندي أسباب أكتر من إني أقدر أعدّها. كل سنة وإنت حبيبي يا أحمد. ❤️</p><button onclick="go('birthday')">يلا نطفي الشمع 🎂</button></section>
 <section id="birthday"><div class="small">غمّض عينك واتمنى أمنية حلوة</div><h2>عيد ميلاد سعيد يا أحمد!</h2><p>12 يناير 2006</p><div id="candle" onclick="blow()">🎂</div><p>دوس على التورتة واطفي الشمع.</p><div id="birthdayMessage">اتمنى أمنية يا حبيبي ✨</div><div id="photoHeart"></div><br><button onclick="go('timer')">شوف عداد حكايتنا ❤️</button></section>
-<section id="timer"><div class="small">من يوم ما بقينا مع بعض ❤️</div><h2>حكايتنا بدأت يوم 21 أبريل 2025</h2><p>وكل ثانية معاك بتفرق معايا</p><div class="timer-grid"><div class="timer-unit"><strong id="days">0</strong><span>يوم</span></div><div class="timer-unit"><strong id="hours">0</strong><span>ساعة</span></div><div class="timer-unit"><strong id="minutes">0</strong><span>دقيقة</span></div><div class="timer-unit"><strong id="seconds">0</strong><span>ثانية</span></div></div><div class="musicbar"><h3>أغنيتنا يا حبيبي 🎶</h3><p>كلي ملكك — شيرين</p><audio id="song" controls loop preload="metadata" style="width:100%"><source src="music/kolly-malekak-sherine.mp3" type="audio/mpeg">المتصفح لا يدعم تشغيل الصوت.</audio><p id="musicStatus">اضغط تشغيل عشان تسمع أغنيتنا ❤️</p></div><button onclick="go('final')">آخر مفاجأة ❤️</button></section>
+<section id="timer"><div class="small">من يوم ما بقينا مع بعض ❤️</div><h2>حكايتنا بدأت يوم 21 أبريل 2026</h2><p>وكل ثانية معاك بتفرق معايا</p><div class="timer-grid"><div class="timer-unit"><strong id="days">0</strong><span>يوم</span></div><div class="timer-unit"><strong id="hours">0</strong><span>ساعة</span></div><div class="timer-unit"><strong id="minutes">0</strong><span>دقيقة</span></div><div class="timer-unit"><strong id="seconds">0</strong><span>ثانية</span></div></div><div class="musicbar"><h3>أغنيتنا يا حبيبي 🎶</h3><p>كلي ملكك — شيرين</p><audio id="song" controls loop preload="metadata" style="width:100%"><source src="music/kolly-malekak-sherine.mp3" type="audio/mpeg">المتصفح لا يدعم تشغيل الصوت.</audio><p id="musicStatus">اضغط تشغيل عشان تسمع أغنيتنا ❤️</p></div><button onclick="go('final')">آخر مفاجأة ❤️</button></section>
 <section id="final"><div class="small">من قلبي لقلبك</div><div class="bigheart">❤️</div><h2>كل سنة وإنت حبيبي يا أحمد</h2><p>إنت أجمل حاجة حصلتلي، ونفسي أفضل جنبك في كل أعياد ميلادك الجاية.</p><div class="promise"><button onclick="revealPromise(this,'هفضل أحب تفاصيلك الصغيرة وألاحظها.')"><span>❤️</span><small>وعد صغير</small></button><button onclick="revealPromise(this,'هفضل أشجعك وأفرح بكل خطوة نجاح ليك.')"><span>🌷</span><small>وعد تاني</small></button><button onclick="revealPromise(this,'وهفضل أتمنى نعيش حكايات وذكريات أكتر سوا.')"><span>✨</span><small>وعد كمان</small></button></div><p id="promiseText" style="min-height:55px;line-height:2;color:#a95670"></p><button onclick="showFinal()">اضغط هنا يا حبيبي 💌</button><div id="lastMessage">يا أحمد، أنا مش عايزة من الدنيا غير إنك تفضل بخير ومبسوط، وإننا نفضل نختار بعض كل يوم. بحبك في كل حالاتك، وفي كل تفاصيلك، وبحب إنك بقيت جزء من أحلامي وأيامي. عيد ميلاد سعيد يا حبيب قلبي، ويا رب أكون دايمًا سبب في ضحكتك. ❤️
 
 من منة ليك، بحبك.</div><img id="graduationPhoto" src="photos/IMG-20261007-WA0022.jpg?v=20261118-2" alt="طفلين بملابس التخرج يحتضنان بعضهما"><p style="max-width:600px;line-height:2.2">يمكن الصورة دي بتفكرنا إننا كنا زمايل في يوم من الأيام 😂❤️ بس مين كان يتخيل إن الحكاية هتكبر وتبقى بالشكل ده؟<br>ومن هنا لسه قدامنا حكايات كتير وذكريات أكتر نعيشها سوا. ❤️</p></section>
@@ -82,42 +82,18 @@ function blow(){
   box.style.display='block';
   if(box.dataset.loaded==='yes') return;
   box.dataset.loaded='yes';
-
-  const photos=[
-    'IMG-20260815-WA0041.jpg',
-    'IMG-20260815-WA0047.jpg',
-    'IMG-20260815-WA0050.jpg',
-    'IMG-20260815-WA0055.jpg',
-    'IMG-20260815-WA0056.jpg',
-    'IMG-20260815-WA0067.jpg',
-    'IMG-20260815-WA0069.jpg',
-    'IMG-20260815-WA0071.jpg',
-    'IMG-20260926-WA0008.jpg',
-    'IMG-20261007-WA0022.jpg',
-    'IMG-20261026-WA0022.jpg',
-    'IMG-20261102-WA0014.jpg',
-    'IMG-20261103-WA0024.jpg',
-    'IMG_20261118_010436.jpg',
-    'IMG_20261118_010446.jpg'
-  ];
-
-  // كل الصور الـ15: 2 في الصف الأول، 4 في الثاني، 5 في الثالث، 3 في الرابع، وواحدة في الأسفل.
-  const positions=[
-    [32,0],[52,0],
-    [12,20],[32,20],[52,20],[72,20],
-    [2,40],[22,40],[42,40],[62,40],[82,40],
-    [22,60],[42,60],[62,60],
-    [42,80]
-  ];
-
+  const photos=['IMG-20260815-WA0041.jpg','IMG-20260815-WA0047.jpg','IMG-20260815-WA0050.jpg','IMG-20260815-WA0055.jpg','IMG-20260815-WA0056.jpg','IMG-20260815-WA0067.jpg','IMG-20260815-WA0069.jpg','IMG-20260815-WA0071.jpg','IMG-20260926-WA0008.jpg','IMG-20261007-WA0022.jpg','IMG-20261026-WA0022.jpg','IMG-20261102-WA0014.jpg','IMG-20261103-WA0024.jpg','IMG_20261118_010436.jpg','IMG_20261118_010446.jpg'];
+  const positions=[[32,0],[52,0],[12,20],[32,20],[52,20],[72,20],[2,40],[22,40],[42,40],[62,40],[82,40],[22,60],[42,60],[62,60],[42,80]];
   photos.forEach((name,i)=>{
     const img=document.createElement('img');
-    img.src='photos/'+name+'?v=20261118-heart15b';
+    img.src='photos/'+name+'?v=20261118-final15';
     img.className='heart-photo';
     img.style.left=positions[i][0]+'%';
     img.style.top=positions[i][1]+'%';
     img.alt='ذكرى من صورنا';
-    img.onerror=()=>{img.style.opacity='.25';img.title='الصورة غير موجودة بالاسم ده داخل مجلد photos';};
     box.appendChild(img);
   });
-}function showFinal(){const el=document.getElementById('lastMessage');el.style.display='block';el.scrollInto
+}
+function showFinal(){const el=document.getElementById('lastMessage');el.style.display='block';el.scrollIntoView({behavior:'smooth',block:'nearest'});}
+function revealPromise(btn,msg){document.getElementById('promiseText').textContent=msg;}
+function updateTimer(){const start=new Date('2026-04-21T16:00:00+03:00').getTime();let diff=Math.max(0,Date.now()-start);const d=Math.floor(diff/86400000);diff%=86400000;const 
