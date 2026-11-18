@@ -93,6 +93,7 @@ section{padding:60px 17px}#letterText{font-size:15px}
 <br>
 <button onclick="go('memories')">شوف صورنا سوا 📸</button>
 </section>
+
 <section id="memories">
 <div class="small">حاجات صغيرة بس غالية عندي</div>
 <h2>صور وذكريات ❤️</h2>
@@ -179,3 +180,138 @@ section{padding:60px 17px}#letterText{font-size:15px}
 <br>
 <button onclick="go('final')">آخر مفاجأة مستنياك ❤️</button>
 </section>
+<section id="timer">
+  <div class="small">من يوم ما بقيت حبيبي ❤️</div>
+  <h2>حكايتنا بدأت يوم 21 أبريل 2025</h2>
+  <p>وكل ثانية معاك بتفرق معايا</p>
+
+  <div class="timer-grid">
+    <div class="timer-unit"><strong id="days">0</strong><span>يوم</span></div>
+    <div class="timer-unit"><strong id="hours">0</strong><span>ساعة</span></div>
+    <div class="timer-unit"><strong id="minutes">0</strong><span>دقيقة</span></div>
+    <div class="timer-unit"><strong id="seconds">0</strong><span>ثانية</span></div>
+  </div>
+
+  <div class="musicbar">
+    <h3>أغنيتنا يا حبيبي 🎶</h3>
+    <p>كلي ملكك — شيرين</p>
+    <audio id="song" controls loop preload="auto" style="width:100%">
+      <source src="music/kolly-malekak-sherine.mp3" type="audio/mpeg">
+      المتصفح لا يدعم تشغيل الصوت.
+    </audio>
+    <p id="musicStatus">اضغطي تشغيل عشان تسمعي أغنيتنا ❤️</p>
+  </div>
+
+  <button onclick="go('final')">كمّل يا حبيبي ❤️</button>
+</section>
+
+<section id="final">
+  <div class="small">من قلبي لقلبك</div>
+  <div class="bigheart">❤️</div>
+  <h2>كل سنة وإنت حبيبي يا أحمد</h2>
+  <p>إنت أجمل حاجة حصلتلي، ونفسي أفضل جنبك في كل أعياد ميلادك الجاية.</p>
+  <br>
+  <button onclick="showFinal()">اضغط هنا يا حبيبي 💌</button>
+  <div id="lastMessage">
+    يا أحمد، أنا مش عايزة من الدنيا غير إنك تفضل بخير ومبسوط، وإننا نفضل نختار بعض كل يوم. بحبك في كل حالاتك، وفي كل تفاصيلك، وبحب إنك بقيت جزء من أحلامي وأيامي. عيد ميلاد سعيد يا حبيب قلبي، ويا رب أكون دايمًا سبب في ضحكتك. ❤️
+
+    من منة ليك، بحبك.
+  </div>
+</section>
+
+<footer>اتعمل بكل الحب ❤️ من منة لأحمد</footer>
+
+<audio id="song" src="music/kolly-malekak-sherine.mp3" loop></audio>
+
+<script>
+function go(id) {
+  const section = document.getElementById(id);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+}
+
+function openGift() {
+  go("intro");
+  const song = document.getElementById("song");
+  song.play().then(() => {
+    document.getElementById("musicStatus").textContent = "شغالة يا حبيبي ❤️";
+  }).catch(() => {
+    document.getElementById("musicStatus").textContent =
+      "اضغط تشغيل من مشغل الأغنية تحت عشان تبدأ 🎵";
+  });
+}
+
+function showLetter() {
+  const letter = document.getElementById("letterText");
+  if (letter.style.display === "block") {
+    letter.style.display = "none";
+  } else {
+    letter.style.display = "block";
+  }
+}
+
+function blow() {
+  document.getElementById("candle").textContent = "🎂💨";
+  document.getElementById("birthdayMessage").style.display = "block";
+
+  const heart = document.getElementById("photoHeart");
+  heart.style.display = "block";
+
+  const photos = [
+    "IMG-20260815-WA0041.jpg",
+    "IMG-20260815-WA0050.jpg",
+    "IMG-20260815-WA0056.jpg",
+    "IMG-20260815-WA0071.jpg",
+    "IMG-20261026-WA0022.jpg",
+    "IMG-20261102-WA0014.jpg"
+  ];
+
+  const positions = [
+    [20, 0], [52, 0],
+    [0, 32], [35, 32], [68, 32],
+    [35, 65]
+  ];
+
+  heart.innerHTML = "";
+
+  photos.forEach((photo, index) => {
+    const img = document.createElement("img");
+    img.src = "photos/" + photo;
+    img.className = "heart-photo";
+    img.style.left = positions[index][0] + "%";
+    img.style.top = positions[index][1] + "%";
+    heart.appendChild(img);
+  });
+}
+
+function showFinal() {
+  document.getElementById("lastMessage").style.display = "block";
+}
+
+function updateTimer() {
+  const start = new Date("2025-04-21T16:00:00+03:00").getTime();
+  const now = Date.now();
+  let difference = Math.max(0, now - start);
+
+  const days = Math.floor(difference / 86400000);
+  difference %= 86400000;
+
+  const hours = Math.floor(difference / 3600000);
+  difference %= 3600000;
+
+  const minutes = Math.floor(difference / 60000);
+  const seconds = Math.floor((difference % 60000) / 1000);
+
+  document.getElementById("days").textContent = days;
+  document.getElementById("hours").textContent = hours;
+  document.getElementById("minutes").textContent = minutes;
+  document.getElementById("seconds").textContent = seconds;
+}
+
+updateTimer();
+setInterval(updateTimer, 1000);
+</script>
+
+</body>
+</html>
